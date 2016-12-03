@@ -3,7 +3,11 @@
             [coding-kata.core :refer :all]))
 
 (deftest place-black-test
-  (testing "placing black on top-right"
-    (let [input "...BW...\n...WB..."
-          output "...BW0..\n...WB..."]
+  (testing "placing black on right"
+    (let [input "...BW..."
+          output "...BW0.."]
+      (is (= output (place-black input)))))
+  (testing "placing black on left"
+    (let [input "...WB..."
+          output "..0WB..."]
       (is (= output (place-black input))))))
