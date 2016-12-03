@@ -2,6 +2,7 @@
   (:require [clojure.test :refer :all]
             [coding-kata.core :refer :all]))
 
-(deftest a-test
-  (testing "FIXME, I fail."
-    (is (= 0 1))))
+(deftest place-black-test
+  (let [input "...BW...\n...WB..."
+        output "...BW0..\n...WB..."]
+    (is (= output   (place-black input)))))
