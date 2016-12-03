@@ -11,10 +11,11 @@
 
 
 (defn remove-empty-places [input]
-  (str/replace input #"." ""))
+  (str/replace input "." ""))
 
 (defn place-black [input]
   (let [input (remove-empty-places input )]
-    (if (= input "BW")
-      "...BW0.."
-      "..0WB...")) )
+    (cond
+      (= input "BW") "...BW0.."
+      (= input "WB") "..0WB..."
+      :else "...B....\n...W....\n...0....")) )

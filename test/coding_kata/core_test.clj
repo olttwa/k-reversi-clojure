@@ -10,4 +10,8 @@
   (testing "placing black on left"
     (let [input "...WB..."
           output "..0WB..."]
+      (is (= output (place-black input)))))
+  (testing "placing black on bottom"
+    (let [input "...B....\n...W...."
+          output "...B....\n...W....\n...0...."]
       (is (= output (place-black input))))))
